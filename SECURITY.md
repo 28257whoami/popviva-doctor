@@ -9,7 +9,7 @@
 - `internal/doctor/testdata/` 里的故障是**故意埋的测试夹具**，
   不是真实配置
 
-产品相关内容在私有仓 `demisugar-workspace`，与本仓严格分离。
+产品相关内容在私有仓 `popviva-workspace`，与本仓严格分离。
 
 **公开是不可撤回的**：即使将来转私有，已有的 commit 历史、Release
 和 fork 仍然存在于外部。因此任何提交前必须确认不含上述内容。

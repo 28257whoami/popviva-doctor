@@ -3,7 +3,7 @@
 # 文档与实现曾同时漂移七处，根因就是 doctor 检查所有仓、
 # 唯独不检查自己。检查器不检查自己，等于没有检查器。
 schema_version: 1
-repo: demisugar-doctor
+repo: popviva-doctor
 rule_source: AGENTS.md
 
 doc_roots:
