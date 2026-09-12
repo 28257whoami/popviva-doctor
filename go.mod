@@ -1,4 +1,4 @@
-module github.com/28257whoami/demisugar-doctor
+module github.com/28257whoami/popviva-doctor
 
 go 1.25
 

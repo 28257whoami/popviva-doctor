@@ -36,7 +36,7 @@ type DeliveryFront struct {
 	ID       string   `yaml:"id"`
 	Status   string   `yaml:"status"` // open | closed
 	Title    string   `yaml:"title"`
-	ChangeID string   `yaml:"change_id"` // 跨仓关联，如 DS-2026-0017
+	ChangeID string   `yaml:"change_id"` // 跨仓关联，如 PV-2026-0001
 	ClosedAt string   `yaml:"closed_at"`
 	Commits  []string `yaml:"commits"`
 }

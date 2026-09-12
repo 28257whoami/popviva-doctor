@@ -17,7 +17,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/28257whoami/demisugar-doctor/internal/doctor"
+	"github.com/28257whoami/popviva-doctor/internal/doctor"
 )
 
 // version 必须是 var 不是 const——ldflags -X 只能覆盖 var。
