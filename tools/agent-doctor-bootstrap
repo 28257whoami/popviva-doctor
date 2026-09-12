@@ -33,7 +33,15 @@ target="$BIN_DIR/agent-doctor-$version"
 want=$(grep -E "^\s+${platform}:" "$VERSION_FILE" | sed 's/.*sha256://' | tr -d ' ')
 [ -n "$want" ] || { echo "$VERSION_FILE 中没有 $platform 的校验和" >&2; exit 1; }
 
-verify() { echo "${want}  $1" | sha256sum -c --status 2>/dev/null; }
+verify() {
+  local actual
+  if command -v sha256sum >/dev/null 2>&1; then
+    actual="$(sha256sum "$1" | awk '{print $1}')" || return 1
+  else
+    actual="$(shasum -a 256 "$1" | awk '{print $1}')" || return 1
+  fi
+  [ "$actual" = "$want" ]
+}
 
 if [ -f "$target" ] && verify "$target"; then
   echo "agent-doctor $version ($platform) 已就位"
@@ -41,7 +49,7 @@ if [ -f "$target" ] && verify "$target"; then
 fi
 
 mkdir -p "$BIN_DIR"
-url="https://github.com/28257whoami/demisugar-doctor/releases/download/${version}/agent-doctor-${platform}"
+url="https://github.com/28257whoami/popviva-doctor/releases/download/${version}/agent-doctor-${platform}"
 echo "下载 agent-doctor $version ($platform)..."
 curl -fsSL "$url" -o "$target.tmp"
 
